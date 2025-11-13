@@ -426,6 +426,7 @@ textarea:focus {
   width: 150px;
 }
 
+.press-logo img,
 .press-logo svg {
   width: 100%;
   height: auto;
