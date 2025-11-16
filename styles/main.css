@@ -423,20 +423,13 @@ textarea:focus {
 }
 
 .press-logo {
-  width: 180px;
-  height: 60px;
-  flex: 0 0 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 150px;
 }
 
 .press-logo img,
 .press-logo svg {
   width: 100%;
-  height: 100%;
-  aspect-ratio: 3 / 1;
-  object-fit: contain;
+  height: auto;
   display: block;
 }
 
@@ -497,12 +490,6 @@ textarea:focus {
   padding: 4rem 0;
 }
 
-.section-lead {
-  max-width: 640px;
-  color: var(--slate);
-  margin-bottom: 2rem;
-}
-
 .benefit-grid {
   display: grid;
   gap: 1.5rem;
@@ -513,75 +500,6 @@ textarea:focus {
   padding: 1.5rem;
   border-radius: 1.2rem;
   box-shadow: 0 15px 35px rgba(6, 78, 78, 0.08);
-}
-
-.emotional {
-  padding: 4rem 0;
-  background: var(--cloud);
-}
-
-.emotional-intro {
-  max-width: 720px;
-  margin: 0 auto 2rem;
-  text-align: center;
-}
-
-.emotional-grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.emotional-grid article {
-  background: var(--white);
-  padding: 1.5rem;
-  border-radius: 1.2rem;
-  box-shadow: 0 15px 35px rgba(6, 78, 78, 0.08);
-}
-
-.pricing {
-  padding: 4rem 0;
-}
-
-.pricing-card {
-  background: radial-gradient(circle at top right, rgba(182, 240, 223, 0.6), rgba(255, 255, 255, 0.95));
-  border-radius: 2rem;
-  padding: 2.5rem;
-  box-shadow: 0 25px 60px rgba(6, 78, 78, 0.15);
-  display: grid;
-  gap: 2rem;
-}
-
-.pricing-options {
-  display: grid;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.pricing-option {
-  background: var(--white);
-  border-radius: 1.5rem;
-  padding: 1.75rem;
-  box-shadow: inset 0 0 0 1px rgba(6, 78, 78, 0.08);
-}
-
-.pricing-option .price {
-  font-weight: 700;
-  font-size: 1.4rem;
-  margin: 0.25rem 0 0.75rem;
-}
-
-.pricing-option .price span {
-  font-size: 2rem;
-}
-
-.pricing-option ul {
-  margin: 1rem 0 0;
-  padding-left: 1.1rem;
-  color: var(--slate);
-}
-
-.pricing-option li + li {
-  margin-top: 0.35rem;
 }
 
 .testimonials {
@@ -679,19 +597,6 @@ textarea:focus {
   }
 
   .benefit-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .emotional-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .pricing-card {
-    grid-template-columns: 1.2fr 1fr;
-    align-items: center;
-  }
-
-  .pricing-options {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
