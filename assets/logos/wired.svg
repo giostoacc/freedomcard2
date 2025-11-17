@@ -3,15 +3,15 @@
   <rect width="180" height="60" fill="#000" rx="8"/>
   <g fill="#fff" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="26"
      dominant-baseline="middle" text-anchor="middle">
-    <rect x="15" y="12" width="28" height="36" fill="#fff"/>
-    <text x="29" y="30" fill="#000">W</text>
-    <rect x="49" y="12" width="28" height="36" fill="#fff"/>
-    <text x="63" y="30" fill="#000">I</text>
-    <rect x="83" y="12" width="28" height="36" fill="#fff"/>
-    <text x="97" y="30" fill="#000">R</text>
-    <rect x="117" y="12" width="28" height="36" fill="#fff"/>
-    <text x="131" y="30" fill="#000">E</text>
-    <rect x="151" y="12" width="28" height="36" fill="#fff"/>
-    <text x="165" y="30" fill="#000">D</text>
+    <rect x="8" y="12" width="28" height="36" fill="#fff"/>
+    <text x="22" y="30" fill="#000">W</text>
+    <rect x="42" y="12" width="28" height="36" fill="#fff"/>
+    <text x="56" y="30" fill="#000">I</text>
+    <rect x="76" y="12" width="28" height="36" fill="#fff"/>
+    <text x="90" y="30" fill="#000">R</text>
+    <rect x="110" y="12" width="28" height="36" fill="#fff"/>
+    <text x="124" y="30" fill="#000">E</text>
+    <rect x="144" y="12" width="28" height="36" fill="#fff"/>
+    <text x="158" y="30" fill="#000">D</text>
   </g>
 </svg>
