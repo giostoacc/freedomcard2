@@ -591,9 +591,22 @@ textarea:focus {
   background: var(--white);
 }
 
+.beta-note {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  color: var(--slate);
+  margin-bottom: 0.5rem;
+}
+
 .testimonial-grid {
   display: grid;
   gap: 2rem;
+}
+
+.testimonial-stack {
+  display: grid;
+  gap: 1.5rem;
 }
 
 .testimonial-stack article {
