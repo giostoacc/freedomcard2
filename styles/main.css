@@ -239,6 +239,11 @@ textarea:focus {
   border-radius: 1rem;
 }
 
+.waitlist-form.is-loading button[type="submit"] {
+  opacity: 0.65;
+  pointer-events: none;
+}
+
 .hero-visual {
   display: flex;
   justify-content: center;
