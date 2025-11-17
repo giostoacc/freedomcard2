@@ -15,3 +15,14 @@ This project is ready to publish as a static site using GitHub Pages. Follow the
    - This link is safe to share for testing or stakeholder reviews.
 
 If you need to use a custom domain, configure it from **Settings → Pages** after the first deployment completes.
+
+## Syncing `main` with the latest website build
+
+If you develop on another branch (for example `work`) and want `main` to mirror the newest website, run the helper script from the repository root:
+
+```bash
+./scripts/sync-main.sh  # defaults to syncing into a branch named "main"
+git push origin main --force-with-lease
+```
+
+The script simply repoints the `main` branch to the commit you currently have checked out, so the next push replaces whatever is on GitHub with the latest site.
