@@ -436,6 +436,7 @@ textarea:focus {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  justify-content: center;
   color: var(--white);
 }
 
@@ -447,6 +448,8 @@ textarea:focus {
   flex-direction: column;
   gap: 0.2rem;
   font-size: 0.9rem;
+  text-align: center;
+  align-items: center;
 }
 
 .screen-progress {
@@ -454,6 +457,7 @@ textarea:focus {
   padding: 0.9rem;
   border-radius: 1rem;
   font-size: 0.85rem;
+  text-align: center;
 }
 
 .progress {
@@ -545,8 +549,8 @@ textarea:focus {
 .goal-grid {
   margin-top: 2rem;
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .goal-card {
