@@ -24,7 +24,7 @@
         <a href="#testimonials" class="nav-link">Stories</a>
         <a href="#faq" class="nav-link">FAQ</a>
       </nav>
-      <button class="btn primary small" data-scroll-target="#hero-form">Join waitlist</button>
+      <button class="btn primary small" data-scroll-target="#waitlist">Join waitlist</button>
     </div>
   </header>
 
@@ -33,41 +33,18 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">EU waitlist now open</p>
-          <h1 id="hero-title">The proactive card that enforces your goals—and the life you deserve</h1>
+          <h1 id="hero-title" data-typed-words>The proactive card that enforces your goals—and the life you deserve</h1>
           <p class="lead">Freedom Card allocates every tap toward the future you imagine. Instead of discovering weeks later that you raided your dream fund, we block the leak before regret can set in.</p>
           <ul class="hero-points">
             <li>Smart categories lock sacred savings before discretionary taps ever happen</li>
             <li>Live “safe to spend” insights so you can enjoy today without guilt</li>
+            <li>Talk to your card in real time to get swaps, cheaper alternatives, or approve a must-have spend</li>
             <li>Partner EU banks keep your deposits covered by statutory guarantees</li>
             <li>Engineered for EU protections with PSD2 security and GDPR-first privacy</li>
           </ul>
-          <div class="form-wrapper" id="hero-form">
-            <h2 class="form-title">Save your spot</h2>
-            <form class="waitlist-form" novalidate data-source="hero">
-              <div class="form-grid">
-                <label class="field">
-                  <span class="field-label">Name</span>
-                  <input type="text" name="name" autocomplete="name" required />
-                  <span class="error" aria-live="polite"></span>
-                </label>
-                <label class="field">
-                  <span class="field-label">Email</span>
-                  <input type="email" name="email" autocomplete="email" required />
-                  <span class="error" aria-live="polite"></span>
-                </label>
-              </div>
-              <label class="consent">
-                <input type="checkbox" name="consent" required />
-                <span>I agree to receive waitlist updates from Freedom Card and understand my data is handled under GDPR.</span>
-              </label>
-              <button class="btn primary" type="submit">Join the waitlist</button>
-              <p class="form-note">No spam, ever. We’ll reach out when the beta opens in your region.</p>
-              <div class="form-feedback" role="status" aria-live="polite"></div>
-              <label class="survey" hidden>
-                <span class="field-label">What will you save for?</span>
-                <textarea name="goal" rows="2" placeholder="Tell us your dream... (optional)"></textarea>
-              </label>
-            </form>
+          <div class="hero-cta">
+            <button class="btn primary" data-scroll-target="#waitlist">Join the waitlist</button>
+            <p class="cta-note">Show-stopping value first. Then one powerful form, later on, when you’re ready.</p>
           </div>
         </div>
         <div class="hero-visual" aria-hidden="true">
@@ -149,37 +126,53 @@
       </div>
     </section>
 
-    <section class="mid-cta" aria-label="Mid-page waitlist">
-      <div class="container mid-cta-grid">
-        <div>
-          <h2>Ready for a card that has your back?</h2>
-          <p>Join thousands across the EU practicing proactive saving with less stress. We’ll email as soon as the beta opens in your country.</p>
-        </div>
-        <div class="form-wrapper">
-          <form class="waitlist-form" novalidate data-source="mid-page">
-            <div class="form-grid">
-              <label class="field">
-                <span class="field-label">Name</span>
-                <input type="text" name="name" autocomplete="name" required />
-                <span class="error" aria-live="polite"></span>
-              </label>
-              <label class="field">
-                <span class="field-label">Email</span>
-                <input type="email" name="email" autocomplete="email" required />
-                <span class="error" aria-live="polite"></span>
-              </label>
-            </div>
-            <label class="consent">
-              <input type="checkbox" name="consent" required />
-              <span>I consent to Freedom Card storing my info to contact me about the waitlist.</span>
-            </label>
-            <button class="btn primary" type="submit">Get early access</button>
-            <div class="form-feedback" role="status" aria-live="polite"></div>
-            <label class="survey" hidden>
-              <span class="field-label">What will you save for?</span>
-              <textarea name="goal" rows="2" placeholder="Tell us your dream... (optional)"></textarea>
-            </label>
-          </form>
+    <section class="goal-gallery" aria-label="Concrete goals">
+      <div class="container">
+        <p class="eyebrow">See what's possible</p>
+        <h2>Freedom Card protects the goals that matter most</h2>
+        <div class="goal-grid">
+          <figure class="goal-card">
+            <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=900&q=80" alt="Modern townhome exterior representing a future home deposit" loading="lazy" />
+            <figcaption>
+              <p class="goal-name">Home deposit</p>
+              <p class="goal-progress">72% funded · €4,820 protected</p>
+            </figcaption>
+          </figure>
+          <figure class="goal-card">
+            <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=900&q=80" alt="Fresh vegetables and pantry staples arranged for meal prep" loading="lazy" />
+            <figcaption>
+              <p class="goal-name">Healthy pantry upgrade</p>
+              <p class="goal-progress">€650 reserved each month</p>
+            </figcaption>
+          </figure>
+          <figure class="goal-card">
+            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=80" alt="Traveler overlooking a calm sea during a sabbatical" loading="lazy" />
+            <figcaption>
+              <p class="goal-name">Slow-travel sabbatical</p>
+              <p class="goal-progress">3 of 5 flights already prepaid</p>
+            </figcaption>
+          </figure>
+          <figure class="goal-card">
+            <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?auto=format&fit=crop&w=900&q=80" alt="Calming living room with new sofa and decor" loading="lazy" />
+            <figcaption>
+              <p class="goal-name">Furniture refresh</p>
+              <p class="goal-progress">€2,400 ringfenced · delivery booked</p>
+            </figcaption>
+          </figure>
+          <figure class="goal-card">
+            <img src="https://images.unsplash.com/photo-1458333762116-2302a0bdfa5d?auto=format&fit=crop&w=900&q=80" alt="Hands placing coins into a savings jar" loading="lazy" />
+            <figcaption>
+              <p class="goal-name">Emergency cushion</p>
+              <p class="goal-progress">6 months of rent protected</p>
+            </figcaption>
+          </figure>
+          <figure class="goal-card">
+            <img src="https://images.unsplash.com/photo-1520854223477-5e2cb7b33ffd?auto=format&fit=crop&w=900&q=80" alt="Close friends cheering at a wedding reception" loading="lazy" />
+            <figcaption>
+              <p class="goal-name">Big life events</p>
+              <p class="goal-progress">€1,200 for wedding season ready to use</p>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -222,6 +215,10 @@
             <h3>Future-self check-ins</h3>
             <p>We show the milestone you’re about to accelerate before each large purchase, turning impulse into a conscious choice.</p>
           </article>
+          <article class="featured">
+            <h3>Cancel the cards rooting against you</h3>
+            <p>We strongly encourage you to cancel legacy credit and debit cards engineered to keep you spending. Those cards earn merchant commissions when you splurge; Freedom Card refuses commissions so every nudge protects your goals instead of retailers’ profits.</p>
+          </article>
           <article>
             <h3>Celebrations, not shame</h3>
             <p>Progress streaks remind you what’s possible when you stay consistent, nudging you to keep the promise you made to yourself.</p>
@@ -230,10 +227,67 @@
             <h3>Regret-proof guardrails</h3>
             <p>Soft locks and short delays on overspending moments make it easy to pause, breathe, and remember the life you’re funding.</p>
           </article>
-          <article>
-            <h3>Cancel the cards rooting against you</h3>
-            <p>We strongly encourage you to cancel legacy credit and debit cards engineered to keep you spending. Those cards earn merchant commissions when you splurge; Freedom Card refuses commissions so every nudge protects your goals instead of retailers’ profits.</p>
-          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="chat" aria-label="Chat with your card">
+      <div class="container chat-grid">
+        <div>
+          <p class="eyebrow">Realtime dialogue</p>
+          <h2>Your card answers back when you need clarity</h2>
+          <p>Every Freedom Card comes with a built-in chat assistant. Ask “can I afford this?” mid-shop, challenge a declined expense, or tell the card why a purchase matters. The conversation adjusts your plan on the spot.</p>
+          <ul>
+            <li>Dispute or approve exceptions directly with the card before you reach the till.</li>
+            <li>Voice or type any question—Freedom Card replies instantly with context from your goals.</li>
+            <li>Get coaching on how to replace or delay tempting purchases without sacrificing your plan.</li>
+          </ul>
+        </div>
+        <div class="chat-visual" aria-hidden="true">
+          <div class="chat-screen">
+            <div class="chat-bubble user">Can I stretch for a new bike today?</div>
+            <div class="chat-bubble card">You’re €120 away from the bike fund. Delay the café run and you’ll be there by Friday. Approve purchase now?</div>
+            <div class="chat-bubble user">Approve. I’ll skip the café.</div>
+            <div class="chat-bubble card">Approved ✅ Goal timeline unchanged.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="coaching" aria-label="Savings coaching">
+      <div class="container coaching-grid">
+        <div class="coaching-copy">
+          <p class="eyebrow">Coaching that listens</p>
+          <h2>The card coaches you into smarter swaps before regret hits</h2>
+          <p>When a tap conflicts with your plan, Freedom Card doesn’t just say “no.” It suggests replacements—cheaper cafés, calmer delivery schedules, healthier markets—so you can redirect money into the fund that matters most.</p>
+          <ul class="coaching-list">
+            <li>Identify pricey habits and instantly see better-value swaps.</li>
+            <li>Tap “Accept” in chat to reroute savings into the right vault automatically.</li>
+            <li>Export the coaching log to share with a partner or accountability buddy.</li>
+          </ul>
+        </div>
+        <div class="coaching-cards">
+          <figure class="coach-card">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" alt="Barista pouring latte art" loading="lazy" />
+            <figcaption>
+              <p class="coach-label">Cafe ritual swap</p>
+              <p class="coach-detail">“Brew at home on Tuesdays and redirect €48/month into your emergency cushion.”</p>
+            </figcaption>
+          </figure>
+          <figure class="coach-card">
+            <img src="https://images.unsplash.com/photo-1495121605193-b116b5b09c70?auto=format&fit=crop&w=600&q=80" alt="Neatly organized capsule wardrobe" loading="lazy" />
+            <figcaption>
+              <p class="coach-label">Capsule wardrobe refresh</p>
+              <p class="coach-detail">“Delay the impulse haul. Rent two hero pieces and free €310 for the home deposit.”</p>
+            </figcaption>
+          </figure>
+          <figure class="coach-card">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Colorful vegetables at a farmers market" loading="lazy" />
+            <figcaption>
+              <p class="coach-label">Groceries with intent</p>
+              <p class="coach-detail">“Switch one delivery to the weekend market and move €85 into the travel sabbatical.”</p>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -320,7 +374,7 @@
       </div>
     </section>
 
-    <section class="final-cta" aria-label="Final waitlist">
+    <section class="final-cta" aria-label="Final waitlist" id="waitlist">
       <div class="container">
         <div class="final-card">
           <div>
@@ -329,7 +383,7 @@
             <p>Enter your details below and we’ll send you early access plus our 3-minute guide to proactive goal setting.</p>
           </div>
           <div class="form-wrapper">
-            <form class="waitlist-form" novalidate data-source="footer">
+            <form class="waitlist-form" novalidate data-source="final-cta">
               <div class="form-grid">
                 <label class="field">
                   <span class="field-label">Name</span>

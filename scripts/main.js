@@ -151,6 +151,32 @@ scrollButtons.forEach((button) => {
   });
 });
 
+const typedTargets = document.querySelectorAll('[data-typed-words]');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+typedTargets.forEach((target) => {
+  const text = target.textContent.trim();
+  const words = text.split(/\s+/);
+  target.setAttribute('aria-label', text);
+  target.innerHTML = '';
+
+  words.forEach((word, index) => {
+    const span = document.createElement('span');
+    span.textContent = word;
+    span.style.setProperty('--delay', `${index * 90}ms`);
+    target.appendChild(span);
+    if (index !== words.length - 1) {
+      target.append(' ');
+    }
+  });
+
+  if (reduceMotion) {
+    target.classList.add('typed-ready');
+  } else {
+    requestAnimationFrame(() => target.classList.add('typed-ready'));
+  }
+});
+
 const yearEl = document.getElementById('year');
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
