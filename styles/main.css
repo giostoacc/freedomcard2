@@ -59,7 +59,7 @@ img {
   display: inline-flex;
   flex-direction: column;
   font-weight: 700;
-  color: var(--sand-warm);
+  color: var(--white);
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -113,17 +113,11 @@ img {
 .hero {
   position: relative;
   padding: 6rem 0 4rem;
-  background: linear-gradient(135deg, rgba(3, 26, 68, 0.9), rgba(11, 58, 143, 0.85)),
-    url('../assets/hero/freedom-card-hero.jpg') center/cover;
+  background-image: url('../assets/hero/freedom-card-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--white);
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(124, 196, 255, 0.25), transparent 55%);
-  pointer-events: none;
 }
 
 .hero > .container {
@@ -549,8 +543,8 @@ textarea:focus {
 .goal-grid {
   margin-top: 2rem;
   display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
 .goal-card {
@@ -580,7 +574,7 @@ textarea:focus {
 
 @media (min-width: 1200px) {
   .goal-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(320px, 1fr));
   }
 }
 
@@ -652,19 +646,6 @@ textarea:focus {
   box-shadow: 0 25px 50px rgba(3, 26, 68, 0.35);
 }
 
-@media (min-width: 900px) {
-  .emotional-grid .featured {
-    grid-column: 2 / span 1;
-    transform: translateY(-10%);
-  }
-}
-
-@media (max-width: 899px) {
-  .emotional-grid .featured {
-    order: 2;
-  }
-}
-
 .chat {
   padding: 4rem 0;
 }
@@ -697,18 +678,21 @@ textarea:focus {
   border-radius: 1rem;
   font-size: 0.95rem;
   line-height: 1.4;
+  color: var(--ink);
 }
 
 .chat-bubble.user {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.95);
   align-self: flex-start;
 }
 
 .chat-bubble.card {
-  background: rgba(124, 196, 255, 0.12);
-  border: 1px solid rgba(124, 196, 255, 0.35);
+  background: rgba(219, 229, 255, 0.95);
+  border: 1px solid rgba(3, 26, 68, 0.15);
   align-self: flex-end;
+  color: var(--teal-dark);
 }
+
 
 .coaching {
   padding: 4rem 0;
@@ -717,9 +701,8 @@ textarea:focus {
 
 .coaching-grid {
   display: grid;
-  gap: 2.5rem;
-  align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .coaching-list {
@@ -730,15 +713,11 @@ textarea:focus {
   gap: 0.6rem;
 }
 
-.coaching-cards {
-  display: grid;
-  gap: 1.5rem;
-}
 
-@media (min-width: 768px) {
-  .coaching-cards {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+.coaching-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .coach-card {
@@ -753,7 +732,7 @@ textarea:focus {
 
 .coach-card img {
   width: 100%;
-  height: 190px;
+  height: 200px;
   object-fit: cover;
 }
 
@@ -762,6 +741,23 @@ textarea:focus {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
+}
+
+@media (min-width: 768px) {
+  .coach-card {
+    flex-direction: row;
+    min-height: 220px;
+  }
+
+  .coach-card img {
+    width: 45%;
+    height: auto;
+    min-height: 220px;
+  }
+
+  .coach-card figcaption {
+    flex: 1;
+  }
 }
 
 .coach-label {
@@ -808,6 +804,11 @@ textarea:focus {
 
 .pricing-option .price span {
   font-size: 2rem;
+}
+
+.pricing-option .pricing-note {
+  margin: 0 0 0.75rem;
+  color: var(--slate);
 }
 
 .pricing-option ul {
