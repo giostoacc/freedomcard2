@@ -605,28 +605,6 @@ textarea:focus {
   color: var(--slate);
 }
 
-.benefits {
-  padding: 4rem 0;
-}
-
-.section-lead {
-  max-width: 640px;
-  color: var(--slate);
-  margin-bottom: 2rem;
-}
-
-.benefit-grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.benefit-grid article {
-  background: var(--white);
-  padding: 1.5rem;
-  border-radius: 1.2rem;
-  box-shadow: 0 15px 35px rgba(3, 26, 68, 0.1);
-}
-
 .emotional {
   padding: 4rem 0;
   background: var(--cloud);
@@ -943,10 +921,6 @@ textarea:focus {
   .diff-grid {
     grid-template-columns: 3fr 2fr;
     align-items: center;
-  }
-
-  .benefit-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .emotional-grid {
