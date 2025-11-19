@@ -130,6 +130,14 @@ img {
   gap: 3rem;
 }
 
+.hero-copy {
+  background: rgba(3, 26, 68, 0.72);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(6px);
+  max-width: 580px;
+}
+
 .eyebrow {
   text-transform: uppercase;
   font-size: 0.85rem;
@@ -493,6 +501,9 @@ textarea:focus {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 0.75rem;
+  box-shadow: 0 12px 25px rgba(3, 26, 68, 0.08);
 }
 
 .press-logo img,
@@ -783,6 +794,20 @@ textarea:focus {
   gap: 2rem;
 }
 
+.pricing-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pricing-benefits {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--slate);
+  display: grid;
+  gap: 0.35rem;
+}
+
 .pricing-options {
   display: grid;
   gap: 1.5rem;
@@ -811,16 +836,6 @@ textarea:focus {
   color: var(--slate);
 }
 
-.pricing-option ul {
-  margin: 1rem 0 0;
-  padding-left: 1.1rem;
-  color: var(--slate);
-}
-
-.pricing-option li + li {
-  margin-top: 0.35rem;
-}
-
 .testimonials {
   padding: 4rem 0;
   background: var(--white);
@@ -839,10 +854,14 @@ textarea:focus {
   gap: 2rem;
 }
 
+.testimonial-grid > div:first-child {
+  max-width: 520px;
+}
+
 .testimonial-stack {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 1.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
 .testimonial-stack article {
@@ -875,6 +894,10 @@ textarea:focus {
 
 .final-cta {
   padding: 4rem 0 5rem;
+  background-image: url('../assets/final/mountain-summit.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .final-card {
@@ -941,6 +964,11 @@ textarea:focus {
 
   .testimonial-grid {
     grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+  }
+
+  .testimonial-stack {
+    grid-column: 1 / -1;
   }
 
   .final-card {
@@ -950,6 +978,12 @@ textarea:focus {
   .footer-grid {
     flex-direction: row;
     justify-content: space-between;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-copy {
+    padding: 1.5rem;
   }
 }
 
