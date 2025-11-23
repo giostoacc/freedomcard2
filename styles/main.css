@@ -308,20 +308,10 @@ textarea:focus {
   color: var(--teal-dark);
 }
 
-.waitlist-form.is-success .form-grid,
-.waitlist-form.is-success .consent,
-.waitlist-form.is-success button {
-  display: none;
-}
-
-.waitlist-form.is-success .survey {
+.waitlist-form .survey {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
-}
-
-.waitlist-form.is-success .survey[hidden] {
-  display: flex;
 }
 
 .waitlist-form.is-success .form-feedback {

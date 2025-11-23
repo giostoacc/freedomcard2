@@ -171,7 +171,6 @@ const SCORECARD_OPTIONS = [
 
 forms.forEach((form, index) => {
   const feedback = form.querySelector('.form-feedback');
-  const survey = form.querySelector('.survey');
   const submitButton = form.querySelector('button[type="submit"]');
 
   form.addEventListener('submit', async (event) => {
@@ -230,14 +229,11 @@ forms.forEach((form, index) => {
       const result = await sendWaitlistWithFallback(payload);
       form.classList.add('is-success');
       if (result.status === 'sent') {
-        feedback.textContent = 'Thanks! You’re on the list. Share what you’ll save for below — and watch for the exclusive waitlist offer.';
+        feedback.textContent =
+          'Thanks! You’re on the list with your goal. Your exclusive waitlist offer is locked in and we’ll email beta details soon.';
       } else {
         feedback.textContent =
-          'You’re on the list and we’ll keep retrying from this device until it reaches our beta database. Your exclusive waitlist offer is reserved.';
-      }
-
-      if (survey) {
-        survey.hidden = false;
+          'Got it. Your details and goal are saved on this device and will auto-sync to our beta database as soon as we’re back online. Your exclusive waitlist offer is reserved.';
       }
     } finally {
       form.classList.remove('is-loading');
@@ -247,6 +243,8 @@ forms.forEach((form, index) => {
 });
 
 flushQueue();
+
+window.addEventListener('online', flushQueue);
 
 function setError(input, message) {
   const errorEl = input.closest('.field')?.querySelector('.error');
