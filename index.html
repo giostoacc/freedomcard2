@@ -102,6 +102,7 @@
           </p>
           <button class="btn primary scorecard-start">Start the Freedom Scorecard</button>
           <p class="scorecard-microcopy">No bank login. No income details. Just honest answers.</p>
+          <p class="scorecard-microcopy">Finish the scorecard to claim the exclusive early-offer reserved for waitlist members.</p>
         </div>
 
         <div class="scorecard-quiz hidden" aria-live="polite"></div>
@@ -110,12 +111,14 @@
           <div class="scorecard-result-header">
             <p class="eyebrow">Your Freedom Score</p>
             <div class="scorecard-overall">
-              <h3><span class="scorecard-overall-score">0</span> / 100</h3>
+              <div class="scorecard-score-badge">
+                <h3><span class="scorecard-overall-score">0</span> / 100</h3>
+                <span class="scorecard-overall-label">At risk</span>
+              </div>
               <div class="scorecard-bar" aria-hidden="true">
                 <div class="scorecard-bar-fill" style="width: 0%"></div>
               </div>
             </div>
-            <p class="scorecard-overall-label">At risk</p>
             <p class="scorecard-overall-summary">
               Answer the questions to see where your setup stands today and how to shore up the gaps.
             </p>
@@ -145,7 +148,8 @@
             <h4>Next: let Freedom Card enforce the plan for you</h4>
             <p>
               Ready to act on your Freedom Score? Leave your details to join the Freedom Card EU beta and receive occasional
-              insights on how to improve the score you just saw.
+              insights on how to improve the score you just saw. Everyone on the waitlist unlocks an exclusive early offer when
+              we open access.
             </p>
 
             <form class="waitlist-form" novalidate data-source="scorecard-result">
@@ -166,7 +170,7 @@
                 <span>I agree to the GDPR-compliant processing of my data by Freedom Card.</span>
               </label>
               <button class="btn primary" type="submit">Get my Freedom Score</button>
-              <p class="form-note">No spam. We’ll only email you about the scorecard and beta access.</p>
+              <p class="form-note">No spam. We’ll only email you about the scorecard and beta access, plus the exclusive waitlist offer.</p>
               <div class="form-feedback" role="status" aria-live="polite"></div>
               <label class="survey" hidden>
                 <span class="field-label">What will you save for?</span>

@@ -45,6 +45,75 @@ async function saveWaitlistEntry(payload) {
   return addDoc(waitlistCollection, payload);
 }
 
+const WAITLIST_QUEUE_KEY = 'freedomcard-waitlist-queue';
+let queueRetryTimer = null;
+
+function loadQueue() {
+  if (typeof localStorage === 'undefined') return [];
+  try {
+    const raw = localStorage.getItem(WAITLIST_QUEUE_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch (error) {
+    console.warn('Unable to read waitlist queue', error);
+    return [];
+  }
+}
+
+function saveQueue(queue) {
+  if (typeof localStorage === 'undefined') return;
+  try {
+    localStorage.setItem(WAITLIST_QUEUE_KEY, JSON.stringify(queue));
+  } catch (error) {
+    console.warn('Unable to persist waitlist queue', error);
+  }
+}
+
+function enqueueWaitlist(payload) {
+  const queue = loadQueue();
+  queue.push({ ...payload, queuedAt: Date.now() });
+  saveQueue(queue);
+}
+
+async function flushQueue() {
+  const queue = loadQueue();
+  if (!queue.length) return;
+
+  const remaining = [];
+  for (const entry of queue) {
+    try {
+      await saveWaitlistEntry(entry);
+    } catch (error) {
+      remaining.push(entry);
+    }
+  }
+
+  saveQueue(remaining);
+
+  if (remaining.length) {
+    scheduleQueueRetry();
+  }
+}
+
+function scheduleQueueRetry() {
+  if (queueRetryTimer) return;
+  queueRetryTimer = setTimeout(() => {
+    queueRetryTimer = null;
+    flushQueue();
+  }, 8000);
+}
+
+async function sendWaitlistWithFallback(payload) {
+  try {
+    const result = await saveWaitlistEntry(payload);
+    return { status: 'sent', id: result.id };
+  } catch (error) {
+    console.error('Unable to store waitlist submission', error);
+    enqueueWaitlist(payload);
+    scheduleQueueRetry();
+    return { status: 'queued' };
+  }
+}
+
 const forms = document.querySelectorAll('.waitlist-form');
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -157,22 +226,27 @@ forms.forEach((form, index) => {
       form.classList.add('is-loading');
       setLoadingState(submitButton, true);
       form.classList.remove('is-error');
-      const result = await saveWaitlistEntry(payload);
-      console.info('Waitlist saved', result.id, payload);
+
+      const result = await sendWaitlistWithFallback(payload);
       form.classList.add('is-success');
-      feedback.textContent = 'Thanks! You’re on the list. Share what you’ll save for below.';
+      if (result.status === 'sent') {
+        feedback.textContent = 'Thanks! You’re on the list. Share what you’ll save for below — and watch for the exclusive waitlist offer.';
+      } else {
+        feedback.textContent =
+          'You’re on the list and we’ll keep retrying from this device until it reaches our beta database. Your exclusive waitlist offer is reserved.';
+      }
+
       if (survey) {
         survey.hidden = false;
       }
-    } catch (error) {
-      console.error('Unable to store waitlist submission', error);
-      feedback.textContent = 'We couldn’t save your details. Please try again in a moment.';
     } finally {
       form.classList.remove('is-loading');
       setLoadingState(submitButton, false);
     }
   });
 });
+
+flushQueue();
 
 function setError(input, message) {
   const errorEl = input.closest('.field')?.querySelector('.error');
