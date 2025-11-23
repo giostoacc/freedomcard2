@@ -41,7 +41,7 @@ async function saveWaitlistEntry(payload) {
     throw new Error('Firestore is unavailable');
   }
 
-  const waitlistCollection = collection(db, 'waitlistSignups');
+  const waitlistCollection = collection(db, 'marketing_emails');
   return addDoc(waitlistCollection, payload);
 }
 
@@ -233,7 +233,7 @@ forms.forEach((form, index) => {
           'Thanks! You’re on the list with your goal. Your exclusive waitlist offer is locked in and we’ll email beta details soon.';
       } else {
         feedback.textContent =
-          'Got it. Your details and goal are saved on this device and will auto-sync to our beta database as soon as we’re back online. Your exclusive waitlist offer is reserved.';
+          'Got it. Your details and goal are saved on this device and will auto-sync to our marketing waitlist as soon as we’re back online. Your exclusive offer stays reserved.';
       }
     } finally {
       form.classList.remove('is-loading');
