@@ -19,10 +19,11 @@
       </div>
       <nav class="nav" aria-label="Main">
         <a href="#how" class="nav-link">How it works</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
         <a href="#testimonials" class="nav-link">Stories</a>
         <a href="#faq" class="nav-link">FAQ</a>
       </nav>
-      <button class="btn primary small" data-scroll-target="#freedom-score-form">Get my Freedom Score</button>
+      <button class="btn primary small" data-scroll-target="#freedom-scorecard">Get my Freedom Score</button>
     </div>
   </header>
 
@@ -39,10 +40,9 @@
             <li>Be first in line for Freedom Card’s EU beta if the scorecard suggests it’s a fit.</li>
           </ul>
           <div class="hero-cta">
-            <button class="btn primary" data-scroll-target="#freedom-score-form">Get my Freedom Score</button>
+            <button class="btn primary" data-scroll-target="#freedom-scorecard">Take the 3-minute Freedom Scorecard</button>
             <div class="cta-footnotes">
-              <p class="cta-note">Free · 3 minutes · No card required</p>
-              <a class="cta-link" data-scroll-target="#freedom-score-form" href="#freedom-score-form">Prefer to skip the scorecard? <strong>Join the EU waitlist directly.</strong></a>
+              <p class="cta-note">Free · Private · About 3 minutes</p>
               <p class="cta-quote">“It’s the first time I feel like my card is on my side.” — Beta user, Lisbon</p>
             </div>
           </div>
@@ -81,6 +81,98 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      If we later decide to use Typeform/Tally instead of a custom scorecard:
+      1) Remove the .scorecard-quiz markup and JS.
+      2) Paste the embed code from the external tool inside this section.
+      3) Keep the .scorecard-result block and reuse the same waitlist form.
+    -->
+    <section id="freedom-scorecard" class="section scorecard" aria-label="Freedom Scorecard">
+      <div class="container scorecard-inner">
+        <div class="scorecard-intro">
+          <h2>Check your Freedom Score in 3 minutes</h2>
+          <p>
+            Answer a few quick questions about your goals, habits, and how your current cards nudge you. You’ll get a Freedom
+            Score out of 100, plus a breakdown of where your money system is strong and where it’s quietly leaking.
+          </p>
+          <button class="btn primary scorecard-start">Start the Freedom Scorecard</button>
+          <p class="scorecard-microcopy">No bank login. No income details. Just honest answers.</p>
+        </div>
+
+        <div class="scorecard-quiz hidden" aria-live="polite"></div>
+
+        <div class="scorecard-result hidden" aria-live="polite">
+          <div class="scorecard-result-header">
+            <p class="eyebrow">Your Freedom Score</p>
+            <div class="scorecard-overall">
+              <h3><span class="scorecard-overall-score">0</span> / 100</h3>
+              <div class="scorecard-bar" aria-hidden="true">
+                <div class="scorecard-bar-fill" style="width: 0%"></div>
+              </div>
+            </div>
+            <p class="scorecard-overall-label">At risk</p>
+            <p class="scorecard-overall-summary">
+              Answer the questions to see where your setup stands today and how to shore up the gaps.
+            </p>
+          </div>
+
+          <div class="scorecard-breakdown" role="list">
+            <article class="scorecard-dimension" role="listitem" data-dimension="Goals &amp; clarity">
+              <p class="dimension-label">Goals &amp; clarity</p>
+              <p class="dimension-score"><span class="scorecard-dim-score">0</span> / 100</p>
+            </article>
+            <article class="scorecard-dimension" role="listitem" data-dimension="Daily money habits">
+              <p class="dimension-label">Daily money habits</p>
+              <p class="dimension-score"><span class="scorecard-dim-score">0</span> / 100</p>
+            </article>
+            <article class="scorecard-dimension" role="listitem" data-dimension="Protection from marketing">
+              <p class="dimension-label">Protection from marketing</p>
+              <p class="dimension-score"><span class="scorecard-dim-score">0</span> / 100</p>
+            </article>
+          </div>
+
+          <div class="scorecard-weakest">
+            <h4>Where your system needs the most help</h4>
+            <p class="scorecard-weakest-message">Complete the scorecard to uncover your weakest area.</p>
+          </div>
+
+          <div class="scorecard-next-step" id="freedom-score-form">
+            <h4>Next: let Freedom Card enforce the plan for you</h4>
+            <p>
+              Ready to act on your Freedom Score? Leave your details to join the Freedom Card EU beta and receive occasional
+              insights on how to improve the score you just saw.
+            </p>
+
+            <form class="waitlist-form" novalidate data-source="scorecard-result">
+              <div class="form-grid">
+                <label class="field">
+                  <span class="field-label">Name</span>
+                  <input type="text" name="name" autocomplete="name" required />
+                  <span class="error" aria-live="polite"></span>
+                </label>
+                <label class="field">
+                  <span class="field-label">Email</span>
+                  <input type="email" name="email" autocomplete="email" required />
+                  <span class="error" aria-live="polite"></span>
+                </label>
+              </div>
+              <label class="consent">
+                <input type="checkbox" name="consent" required />
+                <span>I agree to the GDPR-compliant processing of my data by Freedom Card.</span>
+              </label>
+              <button class="btn primary" type="submit">Get my Freedom Score</button>
+              <p class="form-note">No spam. We’ll only email you about the scorecard and beta access.</p>
+              <div class="form-feedback" role="status" aria-live="polite"></div>
+              <label class="survey" hidden>
+                <span class="field-label">What will you save for?</span>
+                <textarea name="goal" rows="2" placeholder="Tell us your dream... (optional)"></textarea>
+              </label>
+            </form>
           </div>
         </div>
       </div>
@@ -408,40 +500,16 @@
       </div>
     </section>
 
-    <section class="final-cta" aria-label="Final waitlist" id="freedom-score-form">
+    <section class="final-cta" aria-label="Stay close to your goals">
       <div class="container">
         <div class="final-card">
           <div>
             <p class="eyebrow">Let’s build your freedom fund</p>
-            <h2>Ready to see your Freedom Score?</h2>
-            <p>Enter your details below to be first to try the 3-minute Freedom Scorecard and get early access to the Freedom Card beta as it rolls out across the EU.</p>
-          </div>
-          <div class="form-wrapper">
-            <form class="waitlist-form" novalidate data-source="final-cta">
-              <div class="form-grid">
-                <label class="field">
-                  <span class="field-label">Name</span>
-                  <input type="text" name="name" autocomplete="name" required />
-                  <span class="error" aria-live="polite"></span>
-                </label>
-                <label class="field">
-                  <span class="field-label">Email</span>
-                  <input type="email" name="email" autocomplete="email" required />
-                  <span class="error" aria-live="polite"></span>
-                </label>
-              </div>
-              <label class="consent">
-                <input type="checkbox" name="consent" required />
-                <span>I agree to the GDPR-compliant processing of my data by Freedom Card.</span>
-              </label>
-              <button class="btn primary" type="submit">Get my Freedom Score</button>
-              <p class="form-note">No spam. We’ll only email you about the scorecard and beta access.</p>
-              <div class="form-feedback" role="status" aria-live="polite"></div>
-              <label class="survey" hidden>
-                <span class="field-label">What will you save for?</span>
-                <textarea name="goal" rows="2" placeholder="Tell us your dream... (optional)"></textarea>
-              </label>
-            </form>
+            <h2>What will you save for next?</h2>
+            <p>
+              Take the Freedom Scorecard to see where your money system is strong and where legacy cards might be nudging you off
+              course. When your score feels right, join the beta and let every tap protect your future self.
+            </p>
           </div>
         </div>
       </div>

@@ -32,6 +32,10 @@ img {
   display: block;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .container {
   width: min(1120px, 92vw);
   margin: 0 auto;
@@ -335,6 +339,166 @@ textarea:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.scorecard {
+  padding: 3.5rem 0;
+  background: linear-gradient(180deg, rgba(3, 26, 68, 0.04), rgba(3, 26, 68, 0.08));
+}
+
+.scorecard-inner {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.scorecard-intro {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 40px rgba(3, 26, 68, 0.12);
+  display: grid;
+  gap: 1rem;
+}
+
+.scorecard-quiz,
+.scorecard-result {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 40px rgba(3, 26, 68, 0.12);
+}
+
+.scorecard-quiz {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.scorecard-progress {
+  font-weight: 600;
+  color: var(--teal-dark);
+}
+
+.scorecard-question {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.scorecard-options {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.scorecard-options label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid rgba(3, 26, 68, 0.12);
+  border-radius: 1rem;
+  background: rgba(243, 245, 251, 0.65);
+}
+
+.scorecard-options input[type='radio'] {
+  accent-color: var(--teal-dark);
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.scorecard-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.scorecard-nav .btn:not(.primary) {
+  background: rgba(3, 26, 68, 0.06);
+  border: 1px solid rgba(3, 26, 68, 0.12);
+  color: var(--teal-dark);
+}
+
+.scorecard-nav .btn.primary {
+  min-width: 210px;
+}
+
+.scorecard-error {
+  color: #c62828;
+  margin: 0;
+}
+
+.scorecard-result-header {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.scorecard-overall h3 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.scorecard-overall-label {
+  font-weight: 700;
+  color: var(--teal-dark);
+}
+
+.scorecard-bar {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(3, 26, 68, 0.08);
+  overflow: hidden;
+}
+
+.scorecard-bar-fill {
+  height: 100%;
+  background: linear-gradient(120deg, var(--teal-dark), var(--mint-bright));
+  width: 0;
+  transition: width 240ms ease;
+}
+
+.scorecard-breakdown {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+.scorecard-dimension {
+  background: rgba(243, 245, 251, 0.8);
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(3, 26, 68, 0.08);
+}
+
+.dimension-label {
+  margin: 0 0 0.35rem;
+  font-weight: 700;
+}
+
+.dimension-score {
+  margin: 0;
+  color: var(--teal-dark);
+  font-weight: 700;
+}
+
+.scorecard-weakest,
+.scorecard-next-step {
+  margin-top: 1rem;
+  background: rgba(3, 26, 68, 0.04);
+  padding: 1.2rem 1.4rem;
+  border-radius: 1rem;
+}
+
+.scorecard-weakest h4,
+.scorecard-next-step h4 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+}
+
+.scorecard-microcopy {
+  color: var(--slate);
+  margin: 0;
 }
 
 .value-prop {
@@ -1011,10 +1175,6 @@ textarea:focus {
 
   .testimonial-stack {
     grid-column: 1 / -1;
-  }
-
-  .final-card {
-    grid-template-columns: 1fr 1fr;
   }
 
   .footer-grid {
