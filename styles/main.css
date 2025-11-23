@@ -203,6 +203,30 @@ img {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.cta-footnotes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.cta-link {
+  font-weight: 600;
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.cta-link strong {
+  font-weight: 700;
+}
+
+.cta-quote {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.82);
+}
+
 .form-wrapper {
   background: var(--white);
   border-radius: 1.5rem;
@@ -311,6 +335,39 @@ textarea:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.value-prop {
+  padding: 3rem 0;
+}
+
+.value-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.value-card {
+  background: var(--white);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 18px 30px rgba(3, 26, 68, 0.08);
+  display: grid;
+  gap: 0.65rem;
+}
+
+.credibility {
+  padding: 2.5rem 0 3rem;
+}
+
+.credibility .container {
+  max-width: 800px;
+}
+
+.credibility p {
+  color: var(--slate);
+  margin: 0.35rem 0;
 }
 
 .card-illustration {
@@ -540,6 +597,11 @@ textarea:focus {
 
 .how-card h3 {
   margin-top: 0;
+}
+
+.how-intro {
+  margin: 0.25rem 0 1rem;
+  color: var(--slate);
 }
 
 .how-card ol {
@@ -777,6 +839,11 @@ textarea:focus {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.pricing-intro {
+  margin: 0;
+  color: var(--slate);
 }
 
 .pricing-benefits {
