@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Freedom Card – Reach Every Savings Goal</title>
-  <meta name="description" content="Freedom Card is the proactive savings card for the EU that enforces your goals and keeps you in control. Join the waitlist today." />
+  <meta name="description" content="Take the 3-minute Freedom Scorecard to spot your biggest money leaks and join the EU beta for the proactive card that protects every goal." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -19,12 +19,11 @@
       </div>
       <nav class="nav" aria-label="Main">
         <a href="#how" class="nav-link">How it works</a>
-        <a href="#benefits" class="nav-link">Benefits</a>
         <a href="#pricing" class="nav-link">Pricing</a>
         <a href="#testimonials" class="nav-link">Stories</a>
         <a href="#faq" class="nav-link">FAQ</a>
       </nav>
-      <button class="btn primary small" data-scroll-target="#waitlist">Join waitlist</button>
+      <button class="btn primary small" data-scroll-target="#freedom-scorecard">Get my Freedom Score</button>
     </div>
   </header>
 
@@ -32,19 +31,20 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">EU waitlist now open</p>
-          <h1 id="hero-title" data-typed-words>The proactive card that enforces your goals—and the life you deserve</h1>
-          <p class="lead">Freedom Card allocates every tap toward the future you imagine. Instead of discovering weeks later that you raided your dream fund, we block the leak before regret can set in.</p>
+          <p class="eyebrow">For EU residents who earn decent money but feel stuck saving</p>
+          <h1 id="hero-title" data-typed-words>Still watching your savings vanish every month?</h1>
+          <p class="lead">Turn your everyday spending into a savings engine. Take the free 3-minute Freedom Scorecard to uncover your three biggest money leaks and see how a proactive card could protect your future goals.</p>
           <ul class="hero-points">
-            <li>Smart categories lock sacred savings before discretionary taps ever happen</li>
-            <li>Live “safe to spend” insights so you can enjoy today without guilt</li>
-            <li>Talk to your card in real time to get swaps, cheaper alternatives, or approve a must-have spend</li>
-            <li>Partner EU banks keep your deposits covered by statutory guarantees</li>
-            <li>Engineered for EU protections with PSD2 security and GDPR-first privacy</li>
+            <li>Score yourself across three areas: goals, spending habits, and safety systems.</li>
+            <li>Get a simple plan to protect your home, travel, or emergency fund without going “no-spend”.</li>
+            <li>Be first in line for Freedom Card’s EU beta if the scorecard suggests it’s a fit.</li>
           </ul>
           <div class="hero-cta">
-            <button class="btn primary" data-scroll-target="#waitlist">Join the waitlist</button>
-            <p class="cta-note">Show-stopping value first. Then one powerful form, later on, when you’re ready.</p>
+            <button class="btn primary" data-scroll-target="#freedom-scorecard">Take the 3-minute Freedom Scorecard</button>
+            <div class="cta-footnotes">
+              <p class="cta-note">Free · Private · About 3 minutes</p>
+              <p class="cta-quote">“It’s the first time I feel like my card is on my side.” — Beta user, Lisbon</p>
+            </div>
           </div>
         </div>
         <div class="hero-visual" aria-hidden="true">
@@ -69,11 +69,11 @@
               <div class="phone-screen">
                 <div class="screen-card">
                   <span class="mini-title">Freedom Card</span>
-                  <span class="mini-balance">€4,820 protected</span>
+                  <span class="mini-balance">€93,000 protected</span>
                   <span class="mini-status">Goals locked</span>
                 </div>
                 <div class="screen-progress">
-                  <span>Home deposit</span>
+                  <span>Home down payment</span>
                   <div class="progress">
                     <div class="progress-fill" style="width: 72%"></div>
                   </div>
@@ -86,29 +86,140 @@
       </div>
     </section>
 
-    <section class="press" aria-label="Press logos">
-      <div class="container">
-        <p class="press-label">Featured by smart money editors</p>
-        <div class="press-logos">
-          <span class="press-logo">
-            <img src="assets/logos/nzz.svg" alt="Featured by NZZ" loading="lazy" width="180" height="60" />
-          </span>
-          <span class="press-logo">
-            <img src="assets/logos/financial-times.svg" alt="Featured by Financial Times" loading="lazy" width="180" height="60" />
-          </span>
-          <span class="press-logo">
-            <img src="assets/logos/wired.svg" alt="Featured by WIRED" loading="lazy" width="180" height="60" />
-          </span>
+    <!--
+      If we later decide to use Typeform/Tally instead of a custom scorecard:
+      1) Remove the .scorecard-quiz markup and JS.
+      2) Paste the embed code from the external tool inside this section.
+      3) Keep the .scorecard-result block and reuse the same waitlist form.
+    -->
+    <section id="freedom-scorecard" class="section scorecard" aria-label="Freedom Scorecard">
+      <div class="container scorecard-inner">
+        <div class="scorecard-intro">
+          <h2>Check your Freedom Score in 3 minutes</h2>
+          <p>
+            Answer a few quick questions about your goals, habits, and how your current cards nudge you. You’ll get a Freedom
+            Score out of 100, plus a breakdown of where your money system is strong and where it’s quietly leaking.
+          </p>
+          <button class="btn primary scorecard-start">Start the Freedom Scorecard</button>
+          <p class="scorecard-microcopy">No bank login. No income details. Just honest answers.</p>
+          <p class="scorecard-microcopy">Finish the scorecard to claim the exclusive early-offer reserved for waitlist members.</p>
+        </div>
+
+        <div class="scorecard-quiz hidden" aria-live="polite"></div>
+
+        <div class="scorecard-result hidden" aria-live="polite">
+          <div class="scorecard-result-header">
+            <p class="eyebrow">Your Freedom Score</p>
+            <div class="scorecard-overall">
+              <div class="scorecard-score-badge">
+                <h3><span class="scorecard-overall-score">0</span> / 100</h3>
+                <span class="scorecard-overall-label">At risk</span>
+              </div>
+              <div class="scorecard-bar" aria-hidden="true">
+                <div class="scorecard-bar-fill" style="width: 0%"></div>
+              </div>
+            </div>
+            <p class="scorecard-overall-summary">
+              Answer the questions to see where your setup stands today and how to shore up the gaps.
+            </p>
+          </div>
+
+          <div class="scorecard-breakdown" role="list">
+            <article class="scorecard-dimension" role="listitem" data-dimension="Goals &amp; clarity">
+              <p class="dimension-label">Goals &amp; clarity</p>
+              <p class="dimension-score"><span class="scorecard-dim-score">0</span> / 100</p>
+            </article>
+            <article class="scorecard-dimension" role="listitem" data-dimension="Daily money habits">
+              <p class="dimension-label">Daily money habits</p>
+              <p class="dimension-score"><span class="scorecard-dim-score">0</span> / 100</p>
+            </article>
+            <article class="scorecard-dimension" role="listitem" data-dimension="Protection from marketing">
+              <p class="dimension-label">Protection from marketing</p>
+              <p class="dimension-score"><span class="scorecard-dim-score">0</span> / 100</p>
+            </article>
+          </div>
+
+          <div class="scorecard-weakest">
+            <h4>Where your system needs the most help</h4>
+            <p class="scorecard-weakest-message">Complete the scorecard to uncover your weakest area.</p>
+          </div>
+
+          <div class="scorecard-next-step" id="freedom-score-form">
+            <h4>Next: let Freedom Card enforce the plan for you</h4>
+            <p>
+              Ready to act on your Freedom Score? Leave your details to join the Freedom Card EU beta and receive occasional
+              insights on how to improve the score you just saw. Everyone on the waitlist unlocks an exclusive early offer when
+              we open access.
+            </p>
+
+            <form class="waitlist-form" novalidate data-source="scorecard-result">
+              <div class="form-grid">
+                <label class="field">
+                  <span class="field-label">Name</span>
+                  <input type="text" name="name" autocomplete="name" required />
+                  <span class="error" aria-live="polite"></span>
+                </label>
+                <label class="field">
+                  <span class="field-label">Email</span>
+                  <input type="email" name="email" autocomplete="email" required />
+                  <span class="error" aria-live="polite"></span>
+                </label>
+              </div>
+              <label class="consent">
+                <input type="checkbox" name="consent" required />
+                <span>I agree to the GDPR-compliant processing of my data by Freedom Card.</span>
+              </label>
+              <button class="btn primary" type="submit">Get my Freedom Score</button>
+              <p class="form-note">No spam. We’ll only email you about the scorecard and beta access, plus the exclusive waitlist offer.</p>
+              <div class="form-feedback" role="status" aria-live="polite"></div>
+              <label class="survey" hidden>
+                <span class="field-label">What will you save for?</span>
+                <textarea name="goal" rows="2" placeholder="Tell us your dream... (optional)"></textarea>
+              </label>
+            </form>
+          </div>
         </div>
       </div>
     </section>
+
+    <section class="value-prop" aria-labelledby="scorecard-value-title">
+      <div class="container">
+        <h2 id="scorecard-value-title">What you’ll get from the 3-minute Freedom Scorecard</h2>
+        <div class="value-grid">
+          <article class="value-card">
+            <h3>Clarity on your goals</h3>
+            <p>See how clearly your future goals are defined and whether your current spending actually supports them.</p>
+          </article>
+          <article class="value-card">
+            <h3>Spot your money leaks</h3>
+            <p>Identify the habits, subscriptions, and impulse taps that quietly drain your savings each month.</p>
+          </article>
+          <article class="value-card">
+            <h3>Your next best move</h3>
+            <p>Get a simple, actionable plan so you know the one or two changes that would make the biggest difference.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="credibility" aria-labelledby="credibility-title">
+      <div class="container">
+        <h3 id="credibility-title">Why this scorecard works</h3>
+        <p>Freedom Card is built by a small EU-based team obsessed with helping people keep more of what they earn.</p>
+        <p>The scorecard distills the patterns we see again and again in how people set goals, spend day-to-day, and react to marketing pressure.</p>
+        <p>You answer a few honest questions, and we surface the friction points that are easiest to fix first.</p>
+      </div>
+    </section>
+
+    <!-- Press logos removed to keep messaging honest until coverage is confirmed. -->
 
     <section class="difference" id="how">
       <div class="container diff-grid">
         <div>
           <p class="eyebrow">Proactive by design</p>
-          <h2>Traditional budgeting looks back. Freedom Card enforces ahead.</h2>
-          <p>Budgets usually warn you after the damage. Freedom Card sets intelligent guardrails the moment you tap. Categories and spending limits are enforced in real time, so every euro respects your plan. Think of it as a coach who sits inside your wallet and kindly keeps you honest.</p>
+          <h2>Legacy cards gamify spending. Freedom Card enforces your future.</h2>
+          <p>Legacy cards gamify spending to make you spend more instead of save more and trick you with reward programs that are not nearly worth it when you account for how much more you spent on near-term gratification than on long-term goals. Freedom Card is engineered in the opposite direction.</p>
+          <p>Budgets usually warn you after the damage. We set intelligent guardrails the moment you tap and keep you conscious of every marketing ploy so each euro stays loyal to your plan—starting with a few candid answers in the scorecard.</p>
           <ul class="diff-list">
             <li>Automatic allocation locks away savings before discretionary spending</li>
             <li>Adaptive nudges move unused funds to your most urgent goals</li>
@@ -117,10 +228,11 @@
         </div>
         <div class="how-card">
           <h3>How it works</h3>
+          <p class="how-intro">Start with the Freedom Scorecard, then let the card enforce the plan for you.</p>
           <ol>
-            <li><strong>Link</strong> your existing current account—no switch required.</li>
-            <li><strong>Define</strong> the life you’re saving toward. Pick up to five goals.</li>
-            <li><strong>Tap</strong> with Freedom Card. We reserve your savings first and free the rest for joyful spending.</li>
+            <li><strong>Take the 3-minute Freedom Scorecard</strong><br />Answer a few simple questions about your goals, spending habits, and safety nets.</li>
+            <li><strong>See where your money plan breaks</strong><br />Get a breakdown of your strongest area, your biggest leak, and the one shift that would help most.</li>
+            <li><strong>Join the beta to let Freedom Card enforce it for you</strong><br />When the card launches in your country, it can automatically lock in those changes every time you tap.</li>
           </ol>
         </div>
       </div>
@@ -132,42 +244,72 @@
         <h2>Freedom Card protects the goals that matter most</h2>
         <div class="goal-grid">
           <figure class="goal-card">
-            <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=900&q=80" alt="Modern townhome exterior representing a future home deposit" loading="lazy" />
+            <img
+              src="assets/goals/home.png"
+              alt="Scandinavian coastal home with a sod roof overlooking the sea"
+              loading="lazy"
+              decoding="async"
+            />
             <figcaption>
-              <p class="goal-name">Home deposit</p>
-              <p class="goal-progress">72% funded · €4,820 protected</p>
+              <p class="goal-name">Home down payment</p>
+              <p class="goal-progress">72% funded · €93,000 protected</p>
             </figcaption>
           </figure>
           <figure class="goal-card">
-            <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=900&q=80" alt="Fresh vegetables and pantry staples arranged for meal prep" loading="lazy" />
+            <img
+              src="assets/goals/pantry.png"
+              alt="Bowl of vibrant Mediterranean salad with whole-grain bread"
+              loading="lazy"
+              decoding="async"
+            />
             <figcaption>
               <p class="goal-name">Healthy pantry upgrade</p>
               <p class="goal-progress">€650 reserved each month</p>
             </figcaption>
           </figure>
           <figure class="goal-card">
-            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=80" alt="Traveler overlooking a calm sea during a sabbatical" loading="lazy" />
+            <img
+              src="assets/goals/travel.png"
+              alt="Hidden lagoon in a tropical archipelago with emerald water"
+              loading="lazy"
+              decoding="async"
+            />
             <figcaption>
               <p class="goal-name">Slow-travel sabbatical</p>
               <p class="goal-progress">3 of 5 flights already prepaid</p>
             </figcaption>
           </figure>
           <figure class="goal-card">
-            <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?auto=format&fit=crop&w=900&q=80" alt="Calming living room with new sofa and decor" loading="lazy" />
+            <img
+              src="assets/goals/living.png"
+              alt="Bright designer kitchen with marble island and modern stools"
+              loading="lazy"
+              decoding="async"
+            />
             <figcaption>
               <p class="goal-name">Furniture refresh</p>
               <p class="goal-progress">€2,400 ringfenced · delivery booked</p>
             </figcaption>
           </figure>
           <figure class="goal-card">
-            <img src="https://images.unsplash.com/photo-1458333762116-2302a0bdfa5d?auto=format&fit=crop&w=900&q=80" alt="Hands placing coins into a savings jar" loading="lazy" />
+            <img
+              src="assets/goals/emergency.png"
+              alt="Woman resting peacefully in bed with a soft bedside glow"
+              loading="lazy"
+              decoding="async"
+            />
             <figcaption>
               <p class="goal-name">Emergency cushion</p>
               <p class="goal-progress">6 months of rent protected</p>
             </figcaption>
           </figure>
           <figure class="goal-card">
-            <img src="https://images.unsplash.com/photo-1520854223477-5e2cb7b33ffd?auto=format&fit=crop&w=900&q=80" alt="Close friends cheering at a wedding reception" loading="lazy" />
+            <img
+              src="assets/goals/events.png"
+              alt="Child running through a blooming orchard during a family celebration"
+              loading="lazy"
+              decoding="async"
+            />
             <figcaption>
               <p class="goal-name">Big life events</p>
               <p class="goal-progress">€1,200 for wedding season ready to use</p>
@@ -177,47 +319,21 @@
       </div>
     </section>
 
-    <section class="benefits" id="benefits">
-      <div class="container">
-        <p class="eyebrow">Protect your future self</p>
-        <h2>Freedom feels like this</h2>
-        <p class="section-lead">Every euro you forget to protect today becomes a memory you can’t buy back later. Freedom Card keeps your home deposit, sabbatical, or baby fund out of temptation’s reach so future-you never has to say “I wish we saved sooner.”</p>
-        <div class="benefit-grid">
-          <article>
-            <h3>Goal vaults</h3>
-            <p>Each goal has its own vault with automatic rules, so you never have to explain to your future self where the money went.</p>
-          </article>
-          <article>
-            <h3>Joy budget</h3>
-            <p>We surface the amount you can spend freely every day—enjoy the dinner out knowing tomorrow’s dreams stayed untouched.</p>
-          </article>
-          <article>
-            <h3>EU ready</h3>
-            <p>Designed for EU protections from day one, so peace of mind comes baked into every tap.</p>
-          </article>
-          <article>
-            <h3>Community nudges</h3>
-            <p>Opt into gentle nudges from others chasing similar dreams—because accountability beats quiet regret.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section class="emotional" aria-label="Emotional advantages">
       <div class="container">
         <div class="emotional-intro">
           <p class="eyebrow">Why it sticks</p>
-          <h2>Built with emotional triggers that move you to act</h2>
-          <p>Freedom Card pairs positive reinforcement with gentle friction so you avoid the “I’ll start next month” spiral. The result: compounding confidence every time you tap.</p>
+          <h2>Built with emotional triggers that keep marketing hype out of your wallet</h2>
+          <p>Freedom Card pairs positive reinforcement with gentle friction so you avoid the “I’ll start next month” spiral. We remind you exactly which long-term goal is at stake every time advertising tries to lure you toward near-term gratification.</p>
         </div>
         <div class="emotional-grid">
           <article>
             <h3>Future-self check-ins</h3>
             <p>We show the milestone you’re about to accelerate before each large purchase, turning impulse into a conscious choice.</p>
           </article>
-          <article class="featured">
+          <article>
             <h3>Cancel the cards rooting against you</h3>
-            <p>We strongly encourage you to cancel legacy credit and debit cards engineered to keep you spending. Those cards earn merchant commissions when you splurge; Freedom Card refuses commissions so every nudge protects your goals instead of retailers’ profits.</p>
+            <p>Legacy cards gamify spending to make you spend more instead of save more and trick you with reward programs that are not nearly worth it when you account for how much more you spent on near-term gratification than on long-term goals. Freedom Card refuses those incentives and fights for your priorities.</p>
           </article>
           <article>
             <h3>Celebrations, not shame</h3>
@@ -236,19 +352,19 @@
         <div>
           <p class="eyebrow">Realtime dialogue</p>
           <h2>Your card answers back when you need clarity</h2>
-          <p>Every Freedom Card comes with a built-in chat assistant. Ask “can I afford this?” mid-shop, challenge a declined expense, or tell the card why a purchase matters. The conversation adjusts your plan on the spot.</p>
+          <p>Every Freedom Card comes with a built-in chat assistant. Ask “can I afford this?” mid-shop, challenge a declined expense, or tell the card why a purchase matters. The conversation reminds you which long-term goal is at risk and adjusts your plan on the spot.</p>
           <ul>
             <li>Dispute or approve exceptions directly with the card before you reach the till.</li>
             <li>Voice or type any question—Freedom Card replies instantly with context from your goals.</li>
-            <li>Get coaching on how to replace or delay tempting purchases without sacrificing your plan.</li>
+            <li>Get coaching on how to replace or delay tempting purchases—even when marketing campaigns push instant gratification.</li>
           </ul>
         </div>
         <div class="chat-visual" aria-hidden="true">
           <div class="chat-screen">
-            <div class="chat-bubble user">Can I stretch for a new bike today?</div>
-            <div class="chat-bubble card">You’re €120 away from the bike fund. Delay the café run and you’ll be there by Friday. Approve purchase now?</div>
-            <div class="chat-bubble user">Approve. I’ll skip the café.</div>
-            <div class="chat-bubble card">Approved ✅ Goal timeline unchanged.</div>
+            <div class="chat-bubble user">Can I grab a café treat before the ride?</div>
+            <div class="chat-bubble card">You’re €120 away from the bike fund. Skip today’s café run and you’ll stay on track. Approve the coffee anyway?</div>
+            <div class="chat-bubble user">I’ll skip it and move the €8 to the bike goal.</div>
+            <div class="chat-bubble card">Approved ✅ Bike fund timeline protected.</div>
           </div>
         </div>
       </div>
@@ -268,21 +384,36 @@
         </div>
         <div class="coaching-cards">
           <figure class="coach-card">
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" alt="Barista pouring latte art" loading="lazy" />
+            <img
+              src="assets/coaching/cafe-ritual.jpg"
+              alt="Barista pouring latte art into a freshly brewed cappuccino"
+              loading="lazy"
+              decoding="async"
+            />
             <figcaption>
               <p class="coach-label">Cafe ritual swap</p>
               <p class="coach-detail">“Brew at home on Tuesdays and redirect €48/month into your emergency cushion.”</p>
             </figcaption>
           </figure>
           <figure class="coach-card">
-            <img src="https://images.unsplash.com/photo-1495121605193-b116b5b09c70?auto=format&fit=crop&w=600&q=80" alt="Neatly organized capsule wardrobe" loading="lazy" />
+            <img
+              src="assets/coaching/capsule-wardrobe.jpg"
+              alt="Curated capsule wardrobe hanging on a minimalist rack"
+              loading="lazy"
+              decoding="async"
+            />
             <figcaption>
               <p class="coach-label">Capsule wardrobe refresh</p>
-              <p class="coach-detail">“Delay the impulse haul. Rent two hero pieces and free €310 for the home deposit.”</p>
+              <p class="coach-detail">“Delay the impulse haul. Rent two hero pieces and free €310 for the home down payment.”</p>
             </figcaption>
           </figure>
           <figure class="coach-card">
-            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Colorful vegetables at a farmers market" loading="lazy" />
+            <img
+              src="assets/coaching/groceries.jpg"
+              alt="Vibrant bowls of roasted vegetables and dips for a healthy meal"
+              loading="lazy"
+              decoding="async"
+            />
             <figcaption>
               <p class="coach-label">Groceries with intent</p>
               <p class="coach-detail">“Switch one delivery to the weekend market and move €85 into the travel sabbatical.”</p>
@@ -296,30 +427,26 @@
       <div class="container pricing-card">
         <div class="pricing-copy">
           <p class="eyebrow">Transparent pricing</p>
+          <p class="pricing-intro">If the Freedom Scorecard shows we’re a fit, here’s how the card will eventually be priced.</p>
           <h2>Choose how you pay—never worry about surprise fees</h2>
-          <p>Pick the plan that fits your savings style: either pay <strong>0.8% of purchase volume</strong> (whatever you buy with the card) or go with a flat <strong>€9.99 per month with 0% variable fee</strong>. That’s it. No hidden extras—just the plan that keeps you on track.</p>
+          <p>Route <strong>every tap</strong> through Freedom Card so the guardrails can work their magic. Pick whether your fee is a small percentage of each purchase or one predictable monthly price. Either way, you’re insulating yourself from reward schemes built to increase spending instead of savings.</p>
+          <ul class="pricing-benefits">
+            <li>Goal-enforcing spending agent available 24/7 in chat</li>
+            <li>Automatic vault management with adaptive “safe to spend” guidance</li>
+            <li>Smart swap suggestions that surface cheaper equals before you buy</li>
+            <li>Friendly competitions against friends and your own saving streaks</li>
+          </ul>
         </div>
         <div class="pricing-options">
           <article class="pricing-option">
-            <h3>Flex</h3>
+            <h3>Premium Variable</h3>
             <p class="price"><span>0.8%</span> of purchase volume</p>
-            <p>Only pay 0.8% of what you buy with the card—ideal if you’re testing proactive saving or routing specific categories through Freedom Card.</p>
-            <ul>
-              <li>All goal vaults + proactive guardrails</li>
-              <li>Instant insights and celebratory nudges</li>
-              <li>Cancel anytime</li>
-            </ul>
+            <p class="pricing-note">Pay-as-you-go billing that keeps every proactive protection unlocked.</p>
           </article>
           <article class="pricing-option">
-            <h3>Freedom Plus</h3>
+            <h3>Premium Fixed</h3>
             <p class="price"><span>€9.99</span> per month</p>
-            <p>Pay a flat €9.99 each month with <strong>0% variable fees</strong>—perfect when you route most purchases through the card and want predictable costs.</p>
-            <ul>
-              <li>Everything in Flex</li>
-              <li>0% variable fee on every card purchase</li>
-              <li>Priority coaching sessions</li>
-              <li>Early access to partner perks</li>
-            </ul>
+            <p class="pricing-note">One predictable monthly membership for the same full service.</p>
           </article>
         </div>
       </div>
@@ -330,8 +457,7 @@
         <div>
           <p class="beta-note">Reviews from beta test users</p>
           <h2>People are already breathing easier</h2>
-          <p class="lead">“Freedom Card is the first card that protects my future self. The proactive limits mean I finally believe my home deposit is untouchable.”</p>
-          <p class="attribution">— Sofia P., Lisbon</p>
+          <p class="lead">Early testers say the combination of the scorecard plus proactive guardrails finally makes saving feel realistic.</p>
         </div>
         <div class="testimonial-stack">
           <article>
@@ -374,39 +500,16 @@
       </div>
     </section>
 
-    <section class="final-cta" aria-label="Final waitlist" id="waitlist">
+    <section class="final-cta" aria-label="Stay close to your goals">
       <div class="container">
         <div class="final-card">
           <div>
             <p class="eyebrow">Let’s build your freedom fund</p>
-            <h2>Join the proactive savings movement</h2>
-            <p>Enter your details below and we’ll send you early access plus our 3-minute guide to proactive goal setting.</p>
-          </div>
-          <div class="form-wrapper">
-            <form class="waitlist-form" novalidate data-source="final-cta">
-              <div class="form-grid">
-                <label class="field">
-                  <span class="field-label">Name</span>
-                  <input type="text" name="name" autocomplete="name" required />
-                  <span class="error" aria-live="polite"></span>
-                </label>
-                <label class="field">
-                  <span class="field-label">Email</span>
-                  <input type="email" name="email" autocomplete="email" required />
-                  <span class="error" aria-live="polite"></span>
-                </label>
-              </div>
-              <label class="consent">
-                <input type="checkbox" name="consent" required />
-                <span>I agree to the GDPR-compliant processing of my data by Freedom Card.</span>
-              </label>
-              <button class="btn primary" type="submit">Reserve my spot</button>
-              <div class="form-feedback" role="status" aria-live="polite"></div>
-              <label class="survey" hidden>
-                <span class="field-label">What will you save for?</span>
-                <textarea name="goal" rows="2" placeholder="Tell us your dream... (optional)"></textarea>
-              </label>
-            </form>
+            <h2>What will you save for next?</h2>
+            <p>
+              Take the Freedom Scorecard to see where your money system is strong and where legacy cards might be nudging you off
+              course. When your score feels right, join the beta and let every tap protect your future self.
+            </p>
           </div>
         </div>
       </div>
