@@ -1,6 +1,7 @@
 :root {
   --teal-deep: #031a44; /* re-used token name, now a deep midnight blue */
   --teal-dark: #0b3a8f; /* re-used token name, now a royal blue */
+  --teal-curtain: #062d73; /* curtain-inspired blue for dark panels */
   --mint-soft: #dbe5ff;
   --mint-bright: #7cc4ff;
   --sand-warm: #f4c361;
@@ -334,8 +335,8 @@ textarea:focus {
 
 .scorecard {
   padding: 3.5rem 0;
-  background: radial-gradient(circle at 10% 20%, rgba(124, 196, 255, 0.12), transparent 35%),
-    radial-gradient(circle at 90% 15%, rgba(3, 26, 68, 0.08), transparent 30%);
+  background: linear-gradient(180deg, var(--teal-deep), var(--teal-curtain));
+  color: var(--white);
 }
 
 .scorecard-inner {
@@ -344,20 +345,22 @@ textarea:focus {
 }
 
 .scorecard-intro {
-  background: linear-gradient(180deg, var(--bubble-soft), var(--white));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(234, 242, 255, 0.9));
   padding: 2rem;
   border-radius: 1.5rem;
   box-shadow: 0 20px 40px rgba(3, 26, 68, 0.12);
   display: grid;
   gap: 1rem;
+  color: var(--ink);
 }
 
 .scorecard-quiz,
 .scorecard-result {
-  background: linear-gradient(180deg, var(--bubble-soft), var(--white));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(234, 242, 255, 0.92));
   padding: 2rem;
   border-radius: 1.5rem;
   box-shadow: 0 20px 40px rgba(3, 26, 68, 0.12);
+  color: var(--ink);
 }
 
 .scorecard-quiz {
@@ -518,6 +521,8 @@ textarea:focus {
 
 .value-prop {
   padding: 3rem 0;
+  background: linear-gradient(180deg, var(--teal-curtain), var(--teal-deep));
+  color: var(--white);
 }
 
 .value-grid {
@@ -528,12 +533,13 @@ textarea:focus {
 }
 
 .value-card {
-  background: linear-gradient(180deg, var(--bubble-soft), var(--white));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(234, 242, 255, 0.92));
   border-radius: 1.25rem;
   padding: 1.5rem;
   box-shadow: 0 18px 30px rgba(3, 26, 68, 0.1);
   display: grid;
   gap: 0.65rem;
+  color: var(--ink);
 }
 
 .credibility {
@@ -776,19 +782,11 @@ textarea:focus {
 .difference {
   position: relative;
   padding: 4rem 0;
-  background-image: linear-gradient(120deg, rgba(3, 26, 68, 0.76), rgba(3, 26, 68, 0.35)),
-    url('../assets/backgrounds/legacy-retreat.jpg');
+  background-image: url('../assets/backgrounds/legacy-retreat.jpg');
   background-size: cover;
   background-position: center;
   color: var(--white);
-}
-
-.difference::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(3, 26, 68, 0.55), rgba(3, 26, 68, 0.35));
-  pointer-events: none;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.35);
 }
 
 .difference .container {
@@ -830,6 +828,13 @@ textarea:focus {
 
 .goal-gallery {
   padding: 4rem 0;
+  background: linear-gradient(180deg, var(--teal-curtain), var(--teal-deep));
+  color: var(--white);
+}
+
+.goal-gallery h2,
+.goal-gallery .eyebrow {
+  color: var(--white);
 }
 
 .goal-grid {
@@ -871,7 +876,7 @@ textarea:focus {
 }
 
 .goal-card figcaption {
-  padding: 1.05rem 1.25rem;
+  padding: 0.85rem 1rem;
   background: var(--white);
 }
 
@@ -882,34 +887,18 @@ textarea:focus {
 }
 
 .goal-progress {
-  margin-top: 0.2rem;
+  margin-top: 0.15rem;
   color: var(--slate);
 }
 
 .emotional {
   position: relative;
   padding: 4rem 0;
-  background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.9) 0%,
-      rgba(255, 255, 255, 0.85) 100%
-    ),
-    url('../assets/backgrounds/scorecard-checkout.jpg');
+  background: url('../assets/backgrounds/scorecard-checkout.jpg');
   background-size: cover;
   background-position: center;
-}
-
-.emotional::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-      circle at 20% 20%,
-      rgba(219, 229, 255, 0.45),
-      transparent 40%
-    ),
-    radial-gradient(circle at 80% 80%, rgba(124, 196, 255, 0.25), transparent 45%);
-  pointer-events: none;
+  color: var(--white);
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.32);
 }
 
 .emotional .container {
@@ -992,7 +981,8 @@ textarea:focus {
 
 .coaching {
   padding: 4rem 0;
-  background: var(--cloud);
+  background: linear-gradient(180deg, var(--teal-curtain), var(--teal-deep));
+  color: var(--white);
 }
 
 .coaching-grid {
@@ -1004,7 +994,7 @@ textarea:focus {
 .coaching-list {
   margin: 1.25rem 0 0;
   padding-left: 1.2rem;
-  color: var(--slate);
+  color: rgba(255, 255, 255, 0.82);
   display: grid;
   gap: 0.6rem;
 }
@@ -1130,19 +1120,11 @@ textarea:focus {
 .testimonials {
   position: relative;
   padding: 4rem 0;
-  background-image: linear-gradient(120deg, rgba(3, 26, 68, 0.72), rgba(3, 26, 68, 0.45)),
-    url('../assets/backgrounds/hoyva-card-velvet.jpg');
+  background-image: url('../assets/backgrounds/hoyva-card-velvet.jpg');
   background-size: cover;
   background-position: center;
   color: var(--white);
-}
-
-.testimonials::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(3, 26, 68, 0.55), rgba(3, 26, 68, 0.35));
-  pointer-events: none;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.35);
 }
 
 .testimonials .container {
@@ -1188,6 +1170,8 @@ textarea:focus {
 
 .faq {
   padding: 4rem 0;
+  background: linear-gradient(180deg, var(--teal-curtain), var(--teal-deep));
+  color: var(--white);
 }
 
 .faq-list {
