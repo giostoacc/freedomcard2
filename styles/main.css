@@ -794,6 +794,14 @@ textarea:focus {
   z-index: 1;
 }
 
+.difference-copy {
+  background: rgba(3, 26, 68, 0.62);
+  padding: 1.75rem;
+  border-radius: 1.25rem;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 25px 55px rgba(3, 26, 68, 0.28);
+}
+
 .diff-grid {
   display: grid;
   gap: 2.5rem;
@@ -910,6 +918,10 @@ textarea:focus {
   max-width: 720px;
   margin: 0 auto 2rem;
   text-align: center;
+  background: rgba(3, 26, 68, 0.6);
+  padding: 1.25rem 1.5rem;
+  border-radius: 1.25rem;
+  backdrop-filter: blur(2px);
 }
 
 .emotional-grid {
@@ -919,14 +931,15 @@ textarea:focus {
 }
 
 .emotional-grid article {
-  background: linear-gradient(180deg, var(--white), rgba(234, 242, 255, 0.75));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(234, 242, 255, 0.9));
   padding: 1.5rem;
   border-radius: 1.2rem;
   box-shadow: 0 15px 35px rgba(3, 26, 68, 0.1);
+  color: var(--ink);
 }
 
 .emotional-grid .featured {
-  background: rgba(3, 26, 68, 0.92);
+  background: rgba(3, 26, 68, 0.9);
   color: #f5fbf9;
   box-shadow: 0 25px 50px rgba(3, 26, 68, 0.35);
 }
@@ -1184,6 +1197,15 @@ textarea:focus {
   border-radius: 1rem;
   padding: 1rem 1.25rem;
   box-shadow: 0 10px 25px rgba(3, 26, 68, 0.12);
+}
+
+.faq summary {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.faq p {
+  color: var(--slate);
 }
 
 .final-cta {
