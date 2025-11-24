@@ -385,11 +385,11 @@ if (scorecardSection) {
 
     const weakestMessages = {
       'Goals & clarity':
-        'Your goals and timelines aren’t fully locked in. Freedom Card forces each tap to reference your real goals so vague intentions turn into concrete rules.',
+        'Your goals and timelines aren’t fully locked in. Hoyva Card forces each tap to reference your real goals so vague intentions turn into concrete rules.',
       'Daily money habits':
-        'Your day-to-day flow doesn’t consistently protect your goals first. Freedom Card automatically locks savings before discretionary taps and keeps a clear ‘safe to spend’ amount visible.',
+        'Your day-to-day flow doesn’t consistently protect your goals first. Hoyva Card automatically locks savings before discretionary taps and keeps a clear ‘safe to spend’ amount visible.',
       'Protection from marketing':
-        'Marketing and reward schemes have too much influence over your wallet. Freedom Card is intentionally built to block legacy-card tricks so every ‘deal’ has to compete with your future self.',
+        'Marketing and reward schemes have too much influence over your wallet. Hoyva Card is intentionally built to block legacy-card tricks so every ‘deal’ has to compete with your future self.',
     };
 
     return {

@@ -7,6 +7,7 @@
   --ink: #050c1c;
   --slate: #4a5d82;
   --cloud: #f3f5fb;
+  --bubble-soft: #eaf2ff;
   --white: #ffffff;
 }
 
@@ -18,7 +19,7 @@ body {
   margin: 0;
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: var(--ink);
-  background: radial-gradient(circle at top, rgba(219, 229, 255, 0.4), transparent 60%), var(--cloud);
+  background: var(--white);
   line-height: 1.6;
 }
 
@@ -117,7 +118,7 @@ img {
 .hero {
   position: relative;
   padding: 6rem 0 4rem;
-  background-image: url('../assets/hero/freedom-card-hero.jpg');
+  background-image: url('../assets/hero/hoyva-card-hero.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -333,7 +334,8 @@ textarea:focus {
 
 .scorecard {
   padding: 3.5rem 0;
-  background: linear-gradient(180deg, rgba(3, 26, 68, 0.04), rgba(3, 26, 68, 0.08));
+  background: radial-gradient(circle at 10% 20%, rgba(124, 196, 255, 0.12), transparent 35%),
+    radial-gradient(circle at 90% 15%, rgba(3, 26, 68, 0.08), transparent 30%);
 }
 
 .scorecard-inner {
@@ -342,7 +344,7 @@ textarea:focus {
 }
 
 .scorecard-intro {
-  background: var(--white);
+  background: linear-gradient(180deg, var(--bubble-soft), var(--white));
   padding: 2rem;
   border-radius: 1.5rem;
   box-shadow: 0 20px 40px rgba(3, 26, 68, 0.12);
@@ -352,7 +354,7 @@ textarea:focus {
 
 .scorecard-quiz,
 .scorecard-result {
-  background: var(--white);
+  background: linear-gradient(180deg, var(--bubble-soft), var(--white));
   padding: 2rem;
   border-radius: 1.5rem;
   box-shadow: 0 20px 40px rgba(3, 26, 68, 0.12);
@@ -420,6 +422,7 @@ textarea:focus {
 .scorecard-result-header {
   display: grid;
   gap: 0.6rem;
+  align-items: center;
 }
 
 .scorecard-overall {
@@ -428,14 +431,15 @@ textarea:focus {
 }
 
 .scorecard-score-badge {
-  display: flex;
+  display: inline-flex;
   align-items: baseline;
   gap: 0.75rem;
-  padding: 1rem 1.25rem;
-  border-radius: 1rem;
-  background: linear-gradient(120deg, rgba(3, 26, 68, 0.9), rgba(0, 179, 197, 0.9));
+  padding: 1.1rem 1.5rem;
+  border-radius: 1.1rem;
+  background: radial-gradient(circle at 20% 20%, rgba(124, 196, 255, 0.35), transparent 55%),
+    linear-gradient(120deg, rgba(3, 26, 68, 0.95), rgba(0, 179, 197, 0.9));
   color: var(--white);
-  box-shadow: 0 16px 36px rgba(3, 26, 68, 0.28);
+  box-shadow: 0 16px 36px rgba(3, 26, 68, 0.3);
 }
 
 .scorecard-overall h3 {
@@ -524,10 +528,10 @@ textarea:focus {
 }
 
 .value-card {
-  background: var(--white);
+  background: linear-gradient(180deg, var(--bubble-soft), var(--white));
   border-radius: 1.25rem;
   padding: 1.5rem;
-  box-shadow: 0 18px 30px rgba(3, 26, 68, 0.08);
+  box-shadow: 0 18px 30px rgba(3, 26, 68, 0.1);
   display: grid;
   gap: 0.65rem;
 }
@@ -536,13 +540,33 @@ textarea:focus {
   padding: 2.5rem 0 3rem;
 }
 
-.credibility .container {
-  max-width: 800px;
+.credibility-card {
+  background: linear-gradient(180deg, rgba(234, 242, 255, 0.9), rgba(255, 255, 255, 0.95));
+  border-radius: 1.5rem;
+  padding: 1.75rem;
+  box-shadow: 0 20px 45px rgba(3, 26, 68, 0.14);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: start;
 }
 
-.credibility p {
+.credibility-body p {
   color: var(--slate);
-  margin: 0.35rem 0;
+  margin: 0.4rem 0;
+}
+
+.credibility-points {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.credibility-point {
+  background: rgba(3, 26, 68, 0.05);
+  padding: 0.9rem 1rem;
+  border-radius: 1rem;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px rgba(3, 26, 68, 0.05);
 }
 
 .card-illustration {
@@ -750,7 +774,26 @@ textarea:focus {
 }
 
 .difference {
+  position: relative;
   padding: 4rem 0;
+  background-image: linear-gradient(120deg, rgba(3, 26, 68, 0.76), rgba(3, 26, 68, 0.35)),
+    url('../assets/backgrounds/legacy-retreat.jpg');
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
+}
+
+.difference::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(3, 26, 68, 0.55), rgba(3, 26, 68, 0.35));
+  pointer-events: none;
+}
+
+.difference .container {
+  position: relative;
+  z-index: 1;
 }
 
 .diff-grid {
@@ -760,14 +803,15 @@ textarea:focus {
 
 .diff-list {
   padding-left: 1.25rem;
-  color: var(--slate);
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .how-card {
-  background: var(--white);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(234, 242, 255, 0.85));
   border-radius: 1.25rem;
   padding: 1.75rem;
-  box-shadow: 0 20px 50px rgba(3, 26, 68, 0.1);
+  box-shadow: 0 20px 50px rgba(3, 26, 68, 0.18);
+  color: var(--ink);
 }
 
 .how-card h3 {
@@ -827,7 +871,7 @@ textarea:focus {
 }
 
 .goal-card figcaption {
-  padding: 1.5rem;
+  padding: 1.05rem 1.25rem;
   background: var(--white);
 }
 
@@ -838,13 +882,39 @@ textarea:focus {
 }
 
 .goal-progress {
-  margin-top: 0.35rem;
+  margin-top: 0.2rem;
   color: var(--slate);
 }
 
 .emotional {
+  position: relative;
   padding: 4rem 0;
-  background: var(--cloud);
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.85) 100%
+    ),
+    url('../assets/backgrounds/scorecard-checkout.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.emotional::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(219, 229, 255, 0.45),
+      transparent 40%
+    ),
+    radial-gradient(circle at 80% 80%, rgba(124, 196, 255, 0.25), transparent 45%);
+  pointer-events: none;
+}
+
+.emotional .container {
+  position: relative;
+  z-index: 1;
 }
 
 .emotional-intro {
@@ -860,7 +930,7 @@ textarea:focus {
 }
 
 .emotional-grid article {
-  background: var(--white);
+  background: linear-gradient(180deg, var(--white), rgba(234, 242, 255, 0.75));
   padding: 1.5rem;
   border-radius: 1.2rem;
   box-shadow: 0 15px 35px rgba(3, 26, 68, 0.1);
@@ -1036,10 +1106,10 @@ textarea:focus {
 }
 
 .pricing-option {
-  background: var(--white);
+  background: linear-gradient(180deg, var(--white), rgba(234, 242, 255, 0.7));
   border-radius: 1.5rem;
   padding: 1.75rem;
-  box-shadow: inset 0 0 0 1px rgba(3, 26, 68, 0.1);
+  box-shadow: 0 15px 40px rgba(3, 26, 68, 0.12);
 }
 
 .pricing-option .price {
@@ -1058,15 +1128,33 @@ textarea:focus {
 }
 
 .testimonials {
+  position: relative;
   padding: 4rem 0;
-  background: var(--white);
+  background-image: linear-gradient(120deg, rgba(3, 26, 68, 0.72), rgba(3, 26, 68, 0.45)),
+    url('../assets/backgrounds/hoyva-card-velvet.jpg');
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
+}
+
+.testimonials::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(3, 26, 68, 0.55), rgba(3, 26, 68, 0.35));
+  pointer-events: none;
+}
+
+.testimonials .container {
+  position: relative;
+  z-index: 1;
 }
 
 .beta-note {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 0.8rem;
-  color: var(--slate);
+  color: rgba(255, 255, 255, 0.8);
   margin-bottom: 0.5rem;
 }
 
@@ -1086,10 +1174,11 @@ textarea:focus {
 }
 
 .testimonial-stack article {
-  background: var(--cloud);
+  background: rgba(255, 255, 255, 0.92);
   padding: 1.5rem;
   border-radius: 1.2rem;
-  box-shadow: inset 0 0 0 1px rgba(3, 26, 68, 0.08);
+  box-shadow: 0 20px 45px rgba(3, 26, 68, 0.2);
+  color: var(--ink);
 }
 
 .attribution {
