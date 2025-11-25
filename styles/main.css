@@ -58,7 +58,7 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem 0.5rem;
+  padding: 0.9rem 0.75rem;
 }
 
 .logo-mark {
@@ -202,6 +202,34 @@ img {
   align-items: center;
   gap: 1rem;
   margin-top: 1rem;
+}
+
+.hero-mobile-showcase {
+  display: none;
+  margin-top: 1.5rem;
+  width: 100%;
+  gap: 1rem;
+}
+
+.mobile-bubbles {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.mobile-bubble {
+  background: var(--ice);
+  border-radius: 1rem;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 12px 30px rgba(3, 26, 68, 0.14);
+  color: var(--ink);
+}
+
+.mobile-bubble span {
+  display: block;
+}
+
+.mobile-card-only {
+  margin: 0.5rem auto 0;
 }
 
 .hero-cta .cta-note {
@@ -628,7 +656,7 @@ textarea:focus {
 
 .card-number {
   font-size: 1.1rem;
-  letter-spacing: 0.45em;
+  letter-spacing: 0.38em;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
   text-transform: uppercase;
@@ -884,7 +912,7 @@ textarea:focus {
 }
 
 .goal-card figcaption {
-  padding: 0.85rem 1rem;
+  padding: 0.7rem 1rem 0.9rem;
   background: var(--white);
 }
 
@@ -1077,7 +1105,7 @@ textarea:focus {
 .pricing-card {
   background: radial-gradient(circle at top right, rgba(124, 196, 255, 0.45), rgba(255, 255, 255, 0.95));
   border-radius: 2rem;
-  padding: 2.5rem;
+  padding: 2.5rem 2.25rem;
   box-shadow: 0 25px 60px rgba(3, 26, 68, 0.18);
   display: grid;
   gap: 2rem;
@@ -1219,7 +1247,7 @@ textarea:focus {
 .final-card {
   background: radial-gradient(circle at top right, rgba(124, 196, 255, 0.5), rgba(255, 255, 255, 0.92));
   border-radius: 2rem;
-  padding: 2.5rem;
+  padding: 2.25rem;
   display: grid;
   gap: 2rem;
   box-shadow: 0 25px 60px rgba(3, 26, 68, 0.18);
@@ -1292,6 +1320,224 @@ textarea:focus {
 @media (max-width: 640px) {
   .hero-copy {
     padding: 1.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding-top: 4.25rem;
+  }
+
+  .container {
+    width: 94vw;
+  }
+
+  .header-content {
+    align-items: flex-start;
+  }
+
+  .hero {
+    padding: 5rem 0 3.25rem;
+    background-position: center;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .hero-visual {
+    display: none;
+  }
+
+  .hero-mobile-showcase {
+    display: grid;
+  }
+
+  .card-illustration {
+    aspect-ratio: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .card-shadow {
+    display: none;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .hero-visual {
+    order: -1;
+    width: min(420px, 90vw);
+    margin: 0 auto 0.5rem;
+  }
+
+  .card-illustration {
+    position: relative;
+    max-width: 360px;
+    width: 100%;
+  }
+
+  .phone-shell {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: min(360px, 92vw);
+    margin: 0 auto 0;
+    box-shadow: 0 18px 36px rgba(3, 26, 68, 0.4);
+  }
+
+  .card-body {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .card-body .card-number {
+    font-size: 1rem;
+    letter-spacing: 0.32em;
+  }
+
+  .scorecard,
+  .value-prop,
+  .goal-gallery,
+  .coaching,
+  .faq,
+  .pricing,
+  .testimonials,
+  .final-cta {
+    padding: 3.25rem 0;
+  }
+
+  .scorecard-quiz,
+  .scorecard-result,
+  .scorecard-intro,
+  .pricing-card,
+  .testimonial-stack article,
+  .final-card {
+    border-radius: 1.25rem;
+  }
+
+  .goal-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .pricing-card {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .pricing-options {
+    margin-top: 1rem;
+  }
+
+  .pricing-option {
+    padding: 1.4rem;
+  }
+
+  .pricing {
+    padding: 3rem 0;
+    background: var(--white);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+
+  .pricing-card {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    background: var(--white);
+    box-shadow: 0 10px 28px rgba(3, 26, 68, 0.12);
+  }
+
+  .pricing-copy {
+    gap: 0.65rem;
+  }
+
+  .pricing-option {
+    background: var(--white);
+    box-shadow: 0 8px 20px rgba(3, 26, 68, 0.1);
+  }
+
+  .testimonials {
+    padding: 3.25rem 0;
+    overflow: hidden;
+  }
+
+  .testimonial-grid {
+    gap: 1.25rem;
+  }
+
+  .testimonial-stack {
+    grid-template-columns: 1fr;
+  }
+
+  .coaching-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .coach-card {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: auto;
+  }
+
+  .coach-card img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .coach-card figcaption {
+    padding: 1rem 1rem 1.25rem;
+  }
+
+  .chat-grid,
+  .coaching-grid,
+  .pricing-card,
+  .testimonial-grid,
+  .diff-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .how-card {
+    order: 2;
+  }
+
+  .difference-copy {
+    order: 1;
+  }
+
+  .faq details {
+    background: var(--white);
+  }
+
+  .faq summary,
+  .faq p {
+    color: var(--ink);
+  }
+
+  .final-cta {
+    padding-bottom: 3.25rem;
+  }
+
+  .site-footer {
+    padding: 1rem 0 0.75rem;
+  }
+
+  .footer-grid {
+    gap: 0.5rem;
   }
 }
 
